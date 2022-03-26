@@ -1,0 +1,60 @@
+@use "tools" as *;
+@use "fonts" as *;
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  background-color: rgba(0, 22, 51, 0.95);
+
+  * {
+    box-sizing: border-box;
+  }
+
+  img {
+      display: block;
+  }
+}
+
+.whirligrid {
+  padding-bottom: 50px;
+  color: white;
+
+  .hero {
+    .aspect {
+      @include aspect-ratio(16, 4);
+      overflow: hidden;
+    }
+
+    img {
+      position: relative;
+      top: -54%;
+      width: 100%;
+    }
+
+    h1 {
+      padding-left: 20px;
+    }
+
+    .content {
+      position: relative;
+    }
+  }
+
+  .gig {
+    padding: 0 20px;
+
+    img {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+
+    .fifty-fifty {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+  }
+}
