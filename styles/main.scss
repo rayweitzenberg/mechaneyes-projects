@@ -19,10 +19,12 @@ body {
 }
 
 .whirligrid {
-  padding-bottom: 50px;
+  // padding-bottom: 50px;
   color: white;
 
   .hero {
+    margin-bottom: 50px;
+
     .aspect {
       @include aspect-ratio(16, 4);
       overflow: hidden;
@@ -30,12 +32,19 @@ body {
 
     img {
       position: relative;
-      top: -54%;
+      // bottom: 20%;
+      bottom: 67%;
       width: 100%;
+      // height: 100vh;
+      // transform: rotate(180deg);
+      // filter: blur(1px) brightness(120%);
     }
 
     h1 {
+      position: absolute;
+      bottom: -5%;
       padding-left: 20px;
+      z-index: 1;
     }
 
     .content {
@@ -44,11 +53,16 @@ body {
   }
 
   .gig {
+    margin-bottom: 50px;
     padding: 0 20px;
 
     img {
       width: 100%;
-      margin-bottom: 50px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
     }
 
     .fifty-fifty {

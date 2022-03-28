@@ -22,6 +22,7 @@ let slickSettings = {
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 1200,
+  pauseOnHover: false,
 };
 $(function () {
   $(".gig-slick").slick(slickSettings);
