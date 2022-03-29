@@ -14,11 +14,23 @@ body {
   }
 
   img {
-      display: block;
+    display: block;
   }
 }
 
-.whirligrid {
+.fifty-fifty {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.sixty-forty {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 20px;
+}
+
+.project {
   // padding-bottom: 50px;
   color: white;
 
@@ -64,11 +76,39 @@ body {
     h2 {
       margin-bottom: 20px;
     }
+  }
 
-    .fifty-fifty {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
+  &--munari-veil {
+    h1 {
+      color: white;
+    }
+
+    .hero {
+      img {
+        // filter: blur(1px);
+        opacity: 0.6;
+      }
+    }
+
+    .gig {
+      img {
+        width: 100%;
+        max-width: 900px;
+      }
+    }
+  }
+
+  &--stereoh {
+    .hero {
+      .aspect {
+        @include aspect-ratio(16, 6);
+        overflow: hidden;
+      }
+
+      video {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }
