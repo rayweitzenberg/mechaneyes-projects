@@ -111,4 +111,42 @@ body {
       }
     }
   }
+
+  &--sound-noir {
+    .hero {
+      .aspect {
+        @include aspect-ratio(16, 3.5);
+        overflow: hidden;
+      }
+
+      img {
+        bottom: 0;
+      }
+
+      h1 {
+        top: -5%;
+        color: #00f4f8;
+      }
+    }
+
+    .gig {
+      img {
+        float: left;
+        width: 100%;
+        margin: 0;
+      }
+
+      .gig-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        max-width: 1400px;
+      }
+    }
+
+    .sound-noir-portable {
+      width: 50%;
+      border: 1px solid #41a4c4;
+    }
+  }
 }
