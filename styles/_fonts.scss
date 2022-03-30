@@ -47,9 +47,9 @@ h2 {
 
 p {
     @include cholla-unicase-reg;
-    font-size: 1.5rem;
-}
+    font-size: 1.3rem;
 
-p.ital {
-    @include cholla-unicase-reg-it;
+    &.ital {
+        @include cholla-unicase-reg-it;
+    }
 }

@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "jquery": "^3.6.0",
+    "p5": "^1.4.1",
     "slick-carousel": "^1.8.1"
   }
 }

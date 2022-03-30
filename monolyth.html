@@ -14,24 +14,15 @@
         <div class="aspect">
           <div class="content">
             <h1>Monolyth</h1>
-            <div class="hero__gradient"></div>
-            <video autoplay loop muted>
-              <source
-                src="images/project-betterBreaks-hero.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
+            <div id="hero--bloom"></div>
           </div>
         </div>
       </section>
+
       <section class="gig gig--better-breaks">
         <h2>Monolyth, 2022</h2>
-        <a href="https://monolyth.global/idle"
-          ><p>https://monolyth.global/</p></a
-        >
         <p class="ital">
-          Physical installation allowing for the discovery of art and artists.
+          A physical installation allowing for the discovery of art and artists
         </p>
         <p>
           One interacts with the piece using gesture, for which I've leveraged a
@@ -41,6 +32,13 @@
         <p>
           This documentation is rough as the project's under active development.
         </p>
+        <a href="https://monolyth.global/idle"
+          ><p>https://monolyth.global/</p></a
+        >
+        <a href="https://github.com/rayweitzenberg/monolyth"
+          ><p>https://github.com/rayweitzenberg/monolyth</p></a
+        >
+
         <div class="project-video">
           <img class="project-video__button" src="images/play-button.png" />
           <video class="project-video__video" loop>
@@ -64,16 +62,6 @@
       </section>
     </main>
     <script type="module" src="/main.js"></script>
-    <script>
-      // window.onload = (event) => {
-      //   let pjVid = document.querySelector(".project-video__video");
-      //   let pjVidButton = document.querySelector(".project-video__button");
-
-      //   pjVid.onclick = () => {
-      //     pjVid.paused ? pjVid.play() : pjVid.pause();
-      //     pjVidButton.classList.toggle("project-video__button--hidden");
-      //   };
-      // };
-    </script>
+    <script type="module" src="/monolyth-bloom.js"></script>
   </body>
 </html>
