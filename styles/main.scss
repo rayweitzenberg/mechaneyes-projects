@@ -44,17 +44,19 @@ body {
 
     img {
       position: relative;
-      // bottom: 20%;
       bottom: 67%;
       width: 100%;
-      // height: 100vh;
-      // transform: rotate(180deg);
       // filter: blur(1px) brightness(120%);
+    }
+
+    video {
+      width: 100%;
     }
 
     h1 {
       position: absolute;
-      bottom: -5%;
+      bottom: 5%;
+      margin: 0;
       padding-left: 20px;
       z-index: 1;
     }
@@ -64,18 +66,28 @@ body {
     }
   }
 
+  .project-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: fit-content;
+    
+    img.project-video__button {
+      position: absolute;
+      width: 120px;
+    }
+
+    &__button {
+      &--visible {
+
+      }
+    }
+  }
+
   .gig {
     margin-bottom: 50px;
     padding: 0 20px;
-
-    img {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      margin-bottom: 20px;
-    }
   }
 
   &--munari-veil {
@@ -94,6 +106,11 @@ body {
       img {
         width: 100%;
         max-width: 900px;
+        margin-bottom: 20px;
+      }
+  
+      h2 {
+        margin-bottom: 20px;
       }
     }
   }
@@ -124,7 +141,7 @@ body {
       }
 
       h1 {
-        top: -5%;
+        top: 5%;
         color: #00f4f8;
       }
     }
@@ -147,6 +164,26 @@ body {
     .sound-noir-portable {
       width: 50%;
       border: 1px solid #41a4c4;
+    }
+  }
+
+  &--better-breaks {
+    h1 {
+      color: #ff6912;
+    }
+    
+    h2 {
+      margin-bottom: 0;
+    }
+
+    p {
+      margin-top: 10px;
+    }
+
+    .gig {
+      video {
+        height: 90vh;
+      }
     }
   }
 }

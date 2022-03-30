@@ -44,3 +44,8 @@ h2 {
   @include cholla-unicase;
   font-size: 2.4rem;
 }
+
+p {
+    @include cholla-unicase-reg;
+    font-size: 1.5rem;
+}

@@ -1,5 +1,5 @@
-import $ from 'jquery';
-import 'slick-carousel'
+import $ from "jquery";
+import "slick-carousel";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -12,6 +12,8 @@ import "./styles/main.scss";
 //   <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
 // `
 
+// ————————————————————————————————————o————————————————————————————————————o Slick Projects -->
+// ———————————————————————————————————— Slick Projects —>
 let slickSettings = {
   fade: true,
   arrows: false,
@@ -24,6 +26,13 @@ let slickSettings = {
   autoplaySpeed: 1200,
   pauseOnHover: false,
 };
+
 $(function () {
   $(".gig-slick").slick(slickSettings);
+});
+
+// ————————————————————————————————————o————————————————————————————————————o Video -->
+// ———————————————————————————————————— Video - Play Button Toggle —>
+$(".project-video").click(function () {
+  $(".project-video__button").toggle();
 });
