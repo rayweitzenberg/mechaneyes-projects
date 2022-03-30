@@ -33,6 +33,31 @@ $(function () {
 
 // ————————————————————————————————————o————————————————————————————————————o Video -->
 // ———————————————————————————————————— Video - Play Button Toggle —>
-$(".project-video").click(function () {
-  $(".project-video__button").toggle();
-});
+// $(".project-video").click(function () {
+//   $(".project-video__button").toggle();
+// });
+
+window.onload = (event) => {
+  // let pjVid = document.querySelector(".project-video__video");
+  // let pjVidButton = document.querySelector(".project-video__button");
+
+  // pjVid.onclick = () => {
+  //   pjVid.paused ? pjVid.play() : pjVid.pause();
+  //   pjVidButton.classList.toggle("project-video__button--hidden");
+  // };
+
+  const vidsCollection = document.getElementsByClassName(
+    "project-video__video"
+  );
+  const vidBtnsCollection = document.getElementsByClassName(
+    "project-video__button"
+  );
+  for (let i = 0; i < vidsCollection.length; i++) {
+    vidsCollection[i].onclick = () => {
+      vidsCollection[i].paused
+        ? vidsCollection[i].play()
+        : vidsCollection[i].pause();
+      vidBtnsCollection[i].classList.toggle("project-video__button--hidden");
+    };
+  }
+};

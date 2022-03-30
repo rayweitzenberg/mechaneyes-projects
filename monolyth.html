@@ -4,53 +4,73 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Monolyth</title>
+    <title>Better Breaks</title>
   </head>
   <body>
     <!-- INSPIRATION: https://jant.fr/case/mechanical -->
     <!--  -->
-    <main class="project project--sound-noir">
+    <main class="project project--monolyth">
       <section class="hero">
         <div class="aspect">
           <div class="content">
             <h1>Monolyth</h1>
-            <img
-              src="images/project-soundNoir_hero.gif"
-              alt="sound noir: hero"
-            />
-          </div>
-        </div>
-      </section>
-      <section class="gig gig--state">
-        <h2>Monolyth: Online to Offline Installation, 2021-2022</h2>
-        <div class="gig-grid">
+            <div class="hero__gradient"></div>
             <video autoplay loop muted>
               <source
-                src="https://stereoh.one/assets/events-hero-hyperloop.mp4"
+                src="images/project-betterBreaks-hero.mp4"
                 type="video/mp4"
               />
               Your browser does not support the video tag.
             </video>
-          <img
-            src="images/project-soundNoir_005.jpg"
-            alt="sound noir: DJ sprinkles"
-          />
-          <img
-            class="sound-noir-portable"
-            src="images/project-soundNoir_003.jpg"
-            alt="sound noir: portable bodycode"
-          />
-          <img
-            src="images/project-soundNoir_002.jpg"
-            alt="sound noir: chateau flight"
-          />
-          <img
-            src="images/project-soundNoir_001.jpg"
-            alt="sound noir: DJ dex"
-          />
+          </div>
         </div>
+      </section>
+      <section class="gig gig--better-breaks">
+        <h2>Monolyth, 2022</h2>
+        <a href="https://monolyth.global/idle"
+          ><p>https://monolyth.global/</p></a
+        >
+        <p class="ital">
+          Physical installation allowing for the discovery of art and artists.
+        </p>
+        <p>
+          One interacts with the piece using gesture for which I've leveraged a
+          Leap Motion sensor. The piece is currently being developed into an
+          ARG-enabled narrative.
+        </p>
+          <div class="project-video">
+            <img class="project-video__button" src="images/play-button.png" />
+            <video class="project-video__video" loop>
+              <source
+                src="images/project-monolyth-dwellpointTv.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="project-video">
+            <img class="project-video__button" src="images/play-button.png" />
+            <video class="project-video__video" loop>
+              <source
+                src="images/project-monolyth-hypnodelic.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
       </section>
     </main>
     <script type="module" src="/main.js"></script>
+    <script>
+      // window.onload = (event) => {
+      //   let pjVid = document.querySelector(".project-video__video");
+      //   let pjVidButton = document.querySelector(".project-video__button");
+
+      //   pjVid.onclick = () => {
+      //     pjVid.paused ? pjVid.play() : pjVid.pause();
+      //     pjVidButton.classList.toggle("project-video__button--hidden");
+      //   };
+      // };
+    </script>
   </body>
 </html>

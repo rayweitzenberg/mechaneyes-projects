@@ -29,7 +29,7 @@
 }
 
 // Cholla Wide Bold
-@mixin cholla-unicase-reg-it() {
+@mixin cholla-wide-bold() {
     font-family: cholla-wide, sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -48,4 +48,8 @@ h2 {
 p {
     @include cholla-unicase-reg;
     font-size: 1.5rem;
+}
+
+p.ital {
+    @include cholla-unicase-reg-it;
 }
