@@ -32,20 +32,8 @@ $(function () {
 });
 
 // ————————————————————————————————————o————————————————————————————————————o Video -->
-// ———————————————————————————————————— Video - Play Button Toggle —>
-// $(".project-video").click(function () {
-//   $(".project-video__button").toggle();
-// });
-
+// ———————————————————————————————————— Video - Play/Pause + Button Toggle —>
 window.onload = (event) => {
-  // let pjVid = document.querySelector(".project-video__video");
-  // let pjVidButton = document.querySelector(".project-video__button");
-
-  // pjVid.onclick = () => {
-  //   pjVid.paused ? pjVid.play() : pjVid.pause();
-  //   pjVidButton.classList.toggle("project-video__button--hidden");
-  // };
-
   const vidsCollection = document.getElementsByClassName(
     "project-video__video"
   );
