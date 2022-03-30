@@ -34,6 +34,10 @@ body {
   // padding-bottom: 50px;
   color: white;
 
+  img {
+    width: 100%;
+  }
+
   a {
     color: white;
   }
@@ -243,6 +247,12 @@ body {
       video {
         height: 90vh;
       }
+    }
+  }
+
+  &--whirligrid {
+    img {
+      margin-bottom: 20px;
     }
   }
 }
