@@ -28,7 +28,7 @@ let slickSettings = {
 };
 
 $(function () {
-  $(".gig-slick").slick(slickSettings);
+  $(".gig__slick").slick(slickSettings);
 });
 
 // ————————————————————————————————————o————————————————————————————————————o Video -->

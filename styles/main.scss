@@ -20,7 +20,7 @@ body {
 
 .fifty-fifty {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: calc(50% - 10px) calc(50% - 10px);
   gap: 20px;
 }
 
@@ -52,6 +52,10 @@ body {
     .aspect {
       @include aspect-ratio(16, 5);
       overflow: hidden;
+
+      @include bp(lg) {
+        @include aspect-ratio(16, 3);
+      }
     }
 
     img {
@@ -63,6 +67,7 @@ body {
 
     video {
       width: 100%;
+      height: auto;
     }
 
     h1 {
@@ -94,6 +99,15 @@ body {
     }
   }
 
+  .gig {
+    margin-bottom: 50px;
+    padding: 0 20px;
+
+    h2 {
+      margin-bottom: 20px;
+    }
+  }
+
   .project-video {
     display: flex;
     justify-content: center;
@@ -113,11 +127,6 @@ body {
         display: none;
       }
     }
-  }
-
-  .gig {
-    margin-bottom: 50px;
-    padding: 0 20px;
   }
 
   &--better-breaks {
@@ -155,27 +164,92 @@ body {
     }
   }
 
+  &--loops {
+    .hero {
+      .aspect {
+        @include aspect-ratio(16, 6);
+        overflow: hidden;
+      }
+
+      .project-video__video {
+        position: absolute;
+        top: -13vw;
+        left: 0;
+      }
+    }
+
+    .project-video {
+      max-width: none;
+      margin-bottom: 20px;
+
+      &__video {
+        width: 100%;
+      }
+    }
+  }
+
+  &--monolyth {
+    overflow: hidden;
+    margin-bottom: 50px;
+
+    #hero--bloom {
+      width: 100vw;
+      height: 100%;
+    }
+
+    .p5Canvas {
+      width: 100%;
+      height: 100%;
+    }
+
+    .project-video {
+      float: left;
+      padding: 0 20px 20px 0;
+
+      video {
+        height: 90vh;
+      }
+    }
+  }
+
   &--munari-veil {
     h1 {
       color: white;
     }
 
     .hero {
-      img {
-        // filter: blur(1px);
-        opacity: 0.6;
+      &__gradient {
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.6) 0%,
+          rgba(0, 0, 0, 0.5) 30%,
+          rgba(0, 0, 0, 0) 100%
+        );
       }
     }
 
     .gig {
       img {
-        width: 100%;
-        max-width: 900px;
+        width: auto;
+        // max-width: 900px;
+        height: 90vh;
+        max-height: 90vh;
         margin-bottom: 20px;
       }
 
-      h2 {
-        margin-bottom: 20px;
+      &__slick {
+        width: 100%;
+        // max-width: 50%;
+        height: auto;
+        // margin-bottom: 20px;
+      }
+
+      .fifty-fifty {
+        img {
+          width: 100%;
+          max-width: 90vh;
+          height: auto;
+        }
       }
     }
   }
@@ -215,40 +289,28 @@ body {
     }
   }
 
-  &--stereoh {
+  &--sound-noir {
     .hero {
       .aspect {
         @include aspect-ratio(16, 6);
         overflow: hidden;
-      }
 
-      video {
-        width: 100%;
-        height: 100%;
-      }
-    }
+        @include bp(lg) {
+          @include aspect-ratio(16, 5);
 
-    .gig {
-      img {
-        width: 100%;
-      }
-    }
-  }
-
-  &--sound-noir {
-    .hero {
-      .aspect {
-        @include aspect-ratio(16, 3.5);
-        overflow: hidden;
+          img {
+            bottom: 44%;
+          }
+        }
       }
 
       img {
-        bottom: 0;
+        bottom: 16%;
       }
 
       h1 {
-        top: 5%;
-        color: #00f4f8;
+        bottom: 5%;
+        // color: #00f4f8;
       }
     }
 
@@ -273,57 +335,10 @@ body {
     }
   }
 
-  &--loops {
-    .hero {
-      .aspect {
-        @include aspect-ratio(16, 6);
-        overflow: hidden;
-      }
-
-      .project-video__video {
-        position: absolute;
-        top: -13vw;
-        left: 0;
-      }
-    }
-
-    .project-video {
-      max-width: none;
-      margin-bottom: 20px;
-
-      &__video {
+  &--stereoh {
+    .gig {
+      img {
         width: 100%;
-      }
-    }
-  }
-
-  &--monolyth {
-    overflow: hidden;
-    margin-bottom: 50px;
-
-    .hero {
-      .aspect {
-        @include aspect-ratio(16, 6);
-        overflow: hidden;
-      }
-    }
-
-    #hero--bloom {
-      width: 100vw;
-      height: 100%;
-    }
-
-    .p5Canvas {
-      width: 100%;
-      height: 100%;
-    }
-
-    .project-video {
-      float: left;
-      padding: 0 20px 20px 0;
-
-      video {
-        height: 90vh;
       }
     }
   }
