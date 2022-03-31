@@ -205,10 +205,15 @@ body {
   &--better-breaks {
     .hero {
       h1 {
-        // bottom: 0;
+        // bottom: 17%;
         // color: #ff6912;
         color: white;
       }
+
+      // .aspect {
+      //   @include aspect-ratio(16, 6);
+      //   overflow: hidden;
+      // }
     }
 
     h2 {
@@ -226,9 +231,40 @@ body {
     }
   }
 
+  &--loops {
+    .hero {
+      .aspect {
+        @include aspect-ratio(16, 6);
+        overflow: hidden;
+      }
+
+      .project-video__video {
+        position: absolute;
+        top: -13vw;
+        left: 0;
+      }
+    }
+
+    .project-video {
+      max-width: none;
+      margin-bottom: 20px;
+
+      &__video {
+        width: 100%;
+      }
+    }
+  }
+
   &--monolyth {
     overflow: hidden;
     margin-bottom: 50px;
+
+    .hero {
+      .aspect {
+        @include aspect-ratio(16, 6);
+        overflow: hidden;
+      }
+    }
 
     #hero--bloom {
       width: 100vw;
@@ -243,7 +279,7 @@ body {
     .project-video {
       float: left;
       padding: 0 20px 20px 0;
-    
+
       video {
         height: 90vh;
       }
