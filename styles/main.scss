@@ -43,14 +43,14 @@ body {
   }
 
   p {
-    width: 66%;
+    width: 70%;
   }
 
   .hero {
     margin-bottom: 50px;
 
     .aspect {
-      @include aspect-ratio(16, 4);
+      @include aspect-ratio(16, 5);
       overflow: hidden;
     }
 
@@ -70,7 +70,7 @@ body {
       bottom: 5%;
       margin: 0;
       padding-left: 20px;
-      z-index: 1;
+      z-index: 2;
     }
 
     .content {
@@ -90,6 +90,7 @@ body {
         rgba(14, 32, 61, 0) 30%,
         rgba(14, 32, 61, 0) 100%
       );
+      z-index: 1;
     }
   }
 
@@ -119,6 +120,41 @@ body {
     padding: 0 20px;
   }
 
+  &--better-breaks {
+    .hero {
+      h1 {
+        // bottom: 17%;
+        // color: #ff6912;
+        color: white;
+      }
+
+      video {
+        position: absolute;
+        top: -4vw;
+        left: 0;
+      }
+
+      // .aspect {
+      //   @include aspect-ratio(16, 6);
+      //   overflow: hidden;
+      // }
+    }
+
+    h2 {
+      margin-bottom: 0;
+    }
+
+    p {
+      margin-top: 10px;
+    }
+
+    .gig {
+      video {
+        height: 90vh;
+      }
+    }
+  }
+
   &--munari-veil {
     h1 {
       color: white;
@@ -140,6 +176,41 @@ body {
 
       h2 {
         margin-bottom: 20px;
+      }
+    }
+  }
+
+  &--objects-may-appear {
+    .hero {
+      img {
+        bottom: 75%;
+        width: 105%;
+      }
+
+      &__gradient {
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.6) 0%,
+          rgba(0, 0, 0, 0) 30%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+    }
+    
+    .gig {
+      img {
+        width: auto;
+        height: 100%;
+        max-height: 90vh;
+        margin-bottom: 20px;
+      }
+    }
+
+    .fifty-fifty {
+      img {
+        width: 100%;
+        height: auto;
+        max-height: 90vh;
       }
     }
   }
@@ -199,35 +270,6 @@ body {
     .sound-noir-portable {
       width: 50%;
       border: 1px solid #41a4c4;
-    }
-  }
-
-  &--better-breaks {
-    .hero {
-      h1 {
-        // bottom: 17%;
-        // color: #ff6912;
-        color: white;
-      }
-
-      // .aspect {
-      //   @include aspect-ratio(16, 6);
-      //   overflow: hidden;
-      // }
-    }
-
-    h2 {
-      margin-bottom: 0;
-    }
-
-    p {
-      margin-top: 10px;
-    }
-
-    .gig {
-      video {
-        height: 90vh;
-      }
     }
   }
 
