@@ -4,8 +4,8 @@ import "slick-carousel";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import "./style.css";
-import "./styles/main.scss";
+import "../style.css";
+import "../styles/main.scss";
 
 // document.querySelector('#app').innerHTML = `
 //   <h1>Hello Vite!</h1>
