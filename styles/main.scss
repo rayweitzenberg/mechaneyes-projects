@@ -257,7 +257,7 @@ body {
   &--objects-may-appear {
     .hero {
       img {
-        bottom: 75%;
+        bottom: 71%;
         width: 105%;
       }
 
@@ -277,6 +277,28 @@ body {
         height: 100%;
         max-height: 90vh;
         margin-bottom: 20px;
+      }
+
+      .aspect--3-4 {
+        margin-bottom: 20px;
+        @include aspect-ratio(3, 4);
+        overflow: hidden;
+  
+        img {
+          height: 100%;
+          max-height: none;
+        }
+      }
+
+      .aspect--77-94 {
+        margin-bottom: 20px;
+        @include aspect-ratio(77, 94);
+        overflow: hidden;
+  
+        img {
+          height: 100%;
+          max-height: none;
+        }
       }
     }
 
