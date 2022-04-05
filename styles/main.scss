@@ -111,6 +111,8 @@ body {
       margin-bottom: 20px;
     }
 
+    // TODO
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio
     .aspect--1-1 {
       @include aspect-ratio(1, 1);
       overflow: hidden;
@@ -222,6 +224,51 @@ body {
           bottom: 147%;
         }
       }
+    }
+  }
+
+  &--gossamer {
+    img {
+      margin-bottom: 20px;
+    }
+
+    .hero__gradient {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      // background: rgb(0, 18, 37);
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0) 30%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      z-index: 1;
+    }
+
+    .fifty-fifty {
+      img {
+        margin: 0;
+      }
+    }
+
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio
+    .aspect--1098-763 {
+      aspect-ratio: 1098 / 763;
+      width: auto;
+      max-width: 100%;
+      height: 100%;
+      max-height: 90vh;
+    }
+
+    .aspect--183-103 {
+      aspect-ratio: 183 / 103;
+      width: auto;
+      max-width: 100%;
+      height: 100%;
+      max-height: 90vh;
     }
   }
 
