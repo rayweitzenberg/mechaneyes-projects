@@ -20,8 +20,35 @@ body {
 
 .fifty-fifty {
   display: grid;
-  grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
+}
+
+.fifty-fifty-flex {
+  display: flex;
+  gap: 20px;
+
+  div {
+    width: 50%;
+  }
+
+  .project-img {
+    width: 50%;
+    height: 100%;
+    max-height: 90vh;
+    margin-bottom: 20px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .project-video {
+    width: 50%;
+    height: 100%;
+    max-height: 90vh;
+    margin-bottom: 20px;
+  }
 }
 
 .sixty-forty {
@@ -31,12 +58,7 @@ body {
 }
 
 .project {
-  // padding-bottom: 50px;
   color: white;
-
-  img {
-    width: 100%;
-  }
 
   a {
     color: white;
@@ -159,6 +181,14 @@ body {
     }
   }
 
+  .project-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: fit-content;
+  }
+
   .project-video {
     display: flex;
     justify-content: center;
@@ -180,6 +210,8 @@ body {
     }
   }
 
+  // ————————————————————————————————————o————————————————————————————————————o Better Breaks -->
+  // ———————————————————————————————————— Better Breaks —>
   &--better-breaks {
     .hero {
       h1 {
@@ -215,6 +247,8 @@ body {
     }
   }
 
+  // ————————————————————————————————————o————————————————————————————————————o Formalism -->
+  // ———————————————————————————————————— Formalism —>
   &--formalism {
     .hero {
       img {
@@ -227,6 +261,8 @@ body {
     }
   }
 
+  // ————————————————————————————————————o————————————————————————————————————o Gossamer -->
+  // ———————————————————————————————————— Gossamer —>
   &--gossamer {
     img {
       margin-bottom: 20px;
@@ -272,6 +308,8 @@ body {
     }
   }
 
+  // ————————————————————————————————————o————————————————————————————————————o Loops -->
+  // ———————————————————————————————————— Loops —>
   &--loops {
     .hero {
       .aspect {
@@ -287,15 +325,27 @@ body {
     }
 
     .project-video {
-      max-width: none;
-      margin-bottom: 20px;
-
       &__video {
         width: 100%;
+      }
+
+      &--fairfield {
+        aspect-ratio: 1097 / 823;
+        margin-bottom: 20px;
+      }
+
+      &--ios-video {
+        aspect-ratio: 539 / 673;
+      }
+
+      &--fred-p {
+        aspect-ratio: 539 / 958;
       }
     }
   }
 
+  // ————————————————————————————————————o————————————————————————————————————o Monolyth -->
+  // ———————————————————————————————————— Monolyth —>
   &--monolyth {
     overflow: hidden;
     margin-bottom: 50px;
@@ -310,16 +360,25 @@ body {
       height: 100%;
     }
 
+    .fifty-fifty-flex {
+      margin-bottom: 20px;
+    }
+
     .project-video {
-      float: left;
-      padding: 0 20px 20px 0;
+      // float: left;
+      // padding: 0 20px 20px 0;
+      aspect-ratio: 470 / 836;
 
       video {
-        height: 90vh;
+        width: 100%;
+        height: auto;
+        max-height: 90vh;
       }
     }
   }
 
+  // ————————————————————————————————————o————————————————————————————————————o Munari Veil -->
+  // ———————————————————————————————————— Munari Veil —>
   &--munari-veil {
     h1 {
       color: white;
@@ -362,6 +421,8 @@ body {
     }
   }
 
+  // ————————————————————————————————————o————————————————————————————————————o Object May Appear -->
+  // ———————————————————————————————————— Object May Appear —>
   &--objects-may-appear {
     .hero {
       img {
@@ -378,13 +439,12 @@ body {
         );
       }
     }
-    
+
     .gig {
       img {
         width: auto;
         height: 100%;
         max-height: 90vh;
-        margin-bottom: 20px;
       }
     }
 
@@ -397,6 +457,8 @@ body {
     }
   }
 
+  // ————————————————————————————————————o————————————————————————————————————o Sound Noir -->
+  // ———————————————————————————————————— Sound Noir —>
   &--sound-noir {
     .hero {
       .aspect {
@@ -423,34 +485,43 @@ body {
     }
 
     .gig {
-      img {
-        float: left;
-        width: 100%;
-        margin: 0;
-      }
+      .project-img {
+        &--maurice-sprinkles {
+          aspect-ratio: 2 / 3;
+        }
 
-      .gig-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
-        max-width: 1400px;
-      }
-    }
+        &--portable {
+          aspect-ratio: 537 / 805;
+          border: 1px solid #41a4c4;
+        }
 
-    .sound-noir-portable {
-      width: 50%;
-      border: 1px solid #41a4c4;
+        &--flight {
+          aspect-ratio: 3 / 4;
+        }
+
+        &--dex {
+          aspect-ratio: 549 / 848;
+        }
+      }
     }
   }
 
+  // ————————————————————————————————————o————————————————————————————————————o Stereoh -->
+  // ———————————————————————————————————— Stereoh —>
   &--stereoh {
     .gig {
       img {
-        width: 100%;
+        aspect-ratio: 1098 / 695;
+        width: auto;
+        max-width: 100%;
+        height: 100%;
+        max-height: 90vh;
       }
     }
   }
 
+  // ————————————————————————————————————o————————————————————————————————————o Whirligrid -->
+  // ———————————————————————————————————— Whirligrid —>
   &--whirligrid {
     img {
       margin-bottom: 20px;
