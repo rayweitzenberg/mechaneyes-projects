@@ -1,5 +1,10 @@
+import $ from "jquery/dist/jquery";
+import "slick-carousel";
+
 import "./style.css";
 import "./styles/main.scss";
+
+window.jQuery = window.$ = $;
 
 // ————————————————————————————————————o————————————————————————————————————o Images+Video -->
 // ———————————————————————————————————— Img Sizing + Aspect Ratio —>
@@ -33,7 +38,7 @@ const videosLoad = () => {
       oneVid.parentElement.style.aspectRatio =
         oneVid.videoWidth / oneVid.videoHeight;
       // console.log("aspect", oneVid.style.aspectRatio);
-      console.log("oneVid", oneVid.width);
+      // console.log("oneVid", oneVid.width);
     }
   }, 100);
 };
@@ -52,15 +57,14 @@ let slickSettings = {
   pauseOnHover: false,
 };
 
-$(function () {
-  imagesLoad();
-  videosLoad();
-  $(".gig-slick").slick(slickSettings);
-});
-
 // ————————————————————————————————————o————————————————————————————————————o Video -->
 // ———————————————————————————————————— Video - Play/Pause + Button Toggle —>
 window.onload = (event) => {
+  imagesLoad();
+  videosLoad();
+
+  $(".gig-slick").slick(slickSettings);
+
   const vidsCollection = document.getElementsByClassName(
     "project-video__video"
   );
