@@ -1,10 +1,11 @@
-// import { $ } from "./node_modules/jquery/dist/jquery.min.js";
-// import "./node_modules/slick-carousel/slick/slick.min";
-import $ from "jquery";
-import 'slick-carousel';
+// import $ from "jquery";
+// import 'slick-carousel';
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+
+// import 'https://code.jquery.com/jquery-3.6.0.slim.js'
+// import 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js'
 
 import "./style.css";
 import "./styles/main.scss";
