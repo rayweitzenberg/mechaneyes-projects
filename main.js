@@ -18,26 +18,37 @@ const imagesLoad = () => {
 };
 
 // ———————————————————————————————————— Video Sizing + Aspect Ratio —>
-// had to delay calling videosLoad() until after 
+// had to delay calling videosLoad() until after
 // all videos were retrieved. used async/await
-// 
-let allVideos
+//
+let allVideos;
 const getVideos = () => {
   allVideos = document.getElementsByTagName("video");
   // console.log('allVideos', allVideos)
-  return allVideos
-}
+  return allVideos;
+};
 
-const videosLoad = async () => {
-  await getVideos()
-  for (const oneVid of allVideos) {
-    oneVid.width = oneVid.clientWidth;
-    oneVid.height = oneVid.clientHeight;
-    oneVid.style.aspectRatio = oneVid.clientWidth / oneVid.clientHeight;
-    oneVid.parentElement.style.aspectRatio =
-      oneVid.clientWidth / oneVid.clientHeight;
-    // console.log('aspect', video.style.aspectRatio)
-    console.log("oneVid", oneVid);
+let i = 0;
+const videosLoad = () => {
+  // getVideos();
+  allVideos = document.getElementsByTagName("video");
+  console.log('allVideos', allVideos)
+  for (let oneVid of allVideos) {
+    const videoLoop = () => {
+      setTimeout(() => {
+        oneVid.width = oneVid.videoWidth;
+        oneVid.height = oneVid.videoHeight;
+        oneVid.style.aspectRatio = oneVid.videoWidth / oneVid.videoHeight;
+        oneVid.parentElement.style.aspectRatio =
+          oneVid.videoWidth / oneVid.videoHeight;
+        // console.log("aspect", oneVid.style.aspectRatio);
+        console.log("oneVid", oneVid.width);
+        if (i < allVideos) {
+          videoLoop();
+        }
+      }, 1000);
+    };
+    videoLoop()
   }
 };
 
@@ -56,8 +67,8 @@ let slickSettings = {
 };
 
 $(function () {
-  imagesLoad()
-  videosLoad()
+  imagesLoad();
+  videosLoad();
   $(".gig-slick").slick(slickSettings);
 });
 
