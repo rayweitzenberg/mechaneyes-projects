@@ -18,14 +18,10 @@ const imagesLoad = () => {
 };
 
 // ———————————————————————————————————— Video Sizing + Aspect Ratio —>
-// had to delay calling videosLoad() until after
-// all videos were retrieved. used async/await
+// delay for loop until all videos are loaded
 //
-let i = 0;
 const videosLoad = () => {
-  // getVideos();
   const allVideos = document.getElementsByTagName("video");
-  console.log("allVideos", allVideos);
   setTimeout(() => {
     for (let oneVid of allVideos) {
       oneVid.width = oneVid.videoWidth;
@@ -36,7 +32,7 @@ const videosLoad = () => {
       // console.log("aspect", oneVid.style.aspectRatio);
       console.log("oneVid", oneVid.width);
     }
-  }, 100);
+  }, 50);
 };
 
 // ———————————————————————————————————— Slick Projects —>
