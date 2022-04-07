@@ -32,7 +32,7 @@ const videosLoad = () => {
       // console.log("aspect", oneVid.style.aspectRatio);
       console.log("oneVid", oneVid.width);
     }
-  }, 50);
+  }, 100);
 };
 
 // ———————————————————————————————————— Slick Projects —>
