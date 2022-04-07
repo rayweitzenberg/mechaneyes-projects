@@ -12,7 +12,7 @@ module.exports = defineConfig({
         formalism: resolve(__dirname, "projects/formalism/index.html"),
         gossamer: resolve(__dirname, "projects/gossamer/index.html"),
         monolyth: resolve(__dirname, "projects/monolyth/index.html"),
-        munariveil: resolve(__dirname, "projects/munari-veil/index.html"),
+        munari: resolve(__dirname, "projects/munari/index.html"),
         objects: resolve(__dirname, "projects/objects/index.html"),
         soundnoir: resolve(__dirname, "projects/soundnoir/index.html"),
         stereoh: resolve(__dirname, "projects/stereoh/index.html"),
