@@ -25,24 +25,18 @@ let i = 0;
 const videosLoad = () => {
   // getVideos();
   const allVideos = document.getElementsByTagName("video");
-  console.log('allVideos', allVideos)
-  for (let oneVid of allVideos) {
-    const videoLoop = () => {
-      setTimeout(() => {
-        oneVid.width = oneVid.videoWidth;
-        oneVid.height = oneVid.videoHeight;
-        oneVid.style.aspectRatio = oneVid.videoWidth / oneVid.videoHeight;
-        oneVid.parentElement.style.aspectRatio =
-          oneVid.videoWidth / oneVid.videoHeight;
-        // console.log("aspect", oneVid.style.aspectRatio);
-        console.log("oneVid", oneVid.width);
-        if (i < allVideos) {
-          videoLoop();
-        }
-      }, 100);
-    };
-    videoLoop()
-  }
+  console.log("allVideos", allVideos);
+  setTimeout(() => {
+    for (let oneVid of allVideos) {
+      oneVid.width = oneVid.videoWidth;
+      oneVid.height = oneVid.videoHeight;
+      oneVid.style.aspectRatio = oneVid.videoWidth / oneVid.videoHeight;
+      oneVid.parentElement.style.aspectRatio =
+        oneVid.videoWidth / oneVid.videoHeight;
+      // console.log("aspect", oneVid.style.aspectRatio);
+      console.log("oneVid", oneVid.width);
+    }
+  }, 100);
 };
 
 // ———————————————————————————————————— Slick Projects —>
