@@ -1,11 +1,13 @@
+// import { $ } from "./node_modules/jquery/dist/jquery.min.js";
+// import "./node_modules/slick-carousel/slick/slick.min";
 import $ from "jquery";
-import "slick-carousel";
+import 'slick-carousel';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import "../style.css";
-import "../styles/main.scss";
+import "./style.css";
+import "./styles/main.scss";
 
 // document.querySelector('#app').innerHTML = `
 //   <h1>Hello Vite!</h1>
@@ -28,7 +30,7 @@ let slickSettings = {
 };
 
 $(function () {
-  $(".gig__slick").slick(slickSettings);
+  $(".gig-slick").slick(slickSettings);
 });
 
 // ————————————————————————————————————o————————————————————————————————————o Video -->
