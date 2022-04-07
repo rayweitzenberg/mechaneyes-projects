@@ -1,6 +1,6 @@
 @use "tools" as *;
 @use "fonts" as *;
-@import '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css';
+@import "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css";
 
 html {
   font-size: 16px;
@@ -25,13 +25,15 @@ img {
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 50%;
+  width: 100%;
   max-width: fit-content;
   height: 100%;
   max-height: 90vh;
+  margin-bottom: 20px;
 
   img {
     width: 100%;
+    height: auto;
   }
 }
 
@@ -43,7 +45,7 @@ img {
   max-width: fit-content;
   height: 100%;
   max-height: 90vh;
-  // margin-bottom: 20px;
+  margin-bottom: 20px;
 
   video {
     width: 100%;
@@ -54,13 +56,15 @@ img {
   img {
     width: 100%;
     height: auto;
-    margin-bottom: 20px;
   }
 
   video {
     width: 100%;
     height: auto;
-    margin-bottom: 20px;
+  }
+
+  .project-img {
+    width: 50%;
   }
 
   &--flex {
@@ -70,30 +74,18 @@ img {
 
   &--grid {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: calc(50% - 10px) calc(50% - 10px);
     gap: 20px;
+
+    .project-img {
+      width: 100%;
+    }
   }
 }
 
 .fifty-fifty__filler {
   width: 50%;
 }
-
-// .fifty-fifty fifty-fifty--flex {
-//   margin-bottom: 20px;
-// }
-
-// .project-video {
-//   // float: left;
-//   // padding: 0 20px 20px 0;
-//   aspect-ratio: 470 / 836;
-
-//   video {
-//     width: 100%;
-//     height: auto;
-//     max-height: 90vh;
-//   }
-// }
 
 .sixty-forty {
   display: grid;
@@ -137,6 +129,7 @@ img {
       position: relative;
       bottom: 67%;
       width: 100%;
+      height: auto;
     }
 
     video {
@@ -178,16 +171,7 @@ img {
     }
   }
 
-  .project-img {
-  }
-
   .project-video {
-    // position: relative;
-    // width: 100%;
-    // height: 100%;
-    // max-height: 90vh;
-    // margin-bottom: 20px;
-
     img.project-video__button {
       position: absolute;
       width: 120px;
@@ -206,22 +190,15 @@ img {
   // ———————————————————————————————————— Better Breaks —>
   &--better-breaks {
     .hero {
-      h1 {
-        // bottom: 17%;
-        // color: #ff6912;
-        color: white;
-      }
+      // h1 {
+      //   color: white;
+      // }
 
       video {
         position: absolute;
         top: -4vw;
         left: 0;
       }
-
-      // .aspect {
-      //   @include aspect-ratio(16, 6);
-      //   overflow: hidden;
-      // }
     }
 
     h2 {
@@ -231,12 +208,6 @@ img {
     p {
       margin-top: 10px;
     }
-
-    // .gig {
-    //   video {
-    //     height: 90vh;
-    //   }
-    // }
   }
 
   // ————————————————————————————————————o————————————————————————————————————o Formalism -->
@@ -256,10 +227,6 @@ img {
   // ————————————————————————————————————o————————————————————————————————————o Gossamer -->
   // ———————————————————————————————————— Gossamer —>
   &--gossamer {
-    img {
-      margin-bottom: 20px;
-    }
-
     .hero__gradient {
       position: absolute;
       top: 0;
@@ -275,63 +242,41 @@ img {
       );
       z-index: 1;
     }
-
-    .fifty-fifty {
-      img {
-        margin: 0;
-      }
-    }
-
-    // https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio
-    .aspect--1098-763 {
-      aspect-ratio: 1098 / 763;
-      width: auto;
-      max-width: 100%;
-      height: 100%;
-      max-height: 90vh;
-    }
-
-    .aspect--183-103 {
-      aspect-ratio: 183 / 103;
-      width: auto;
-      max-width: 100%;
-      height: 100%;
-      max-height: 90vh;
-    }
   }
 
   // ————————————————————————————————————o————————————————————————————————————o Loops -->
   // ———————————————————————————————————— Loops —>
   &--loops {
     .hero {
-      .aspect {
-        @include aspect-ratio(16, 6);
-        overflow: hidden;
-      }
-
       .project-video__video {
         position: absolute;
-        top: -13vw;
+        top: -68%;
+        top: -20vw;
         left: 0;
+      }
+
+      @include bp(lg) {
+        .project-video__video {
+          top: -23vw;
+        }
       }
     }
 
     .project-video {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: none;
+      
       &__video {
         width: 100%;
-      }
-
-      &--fairfield {
-        aspect-ratio: 1097 / 823;
-        margin-bottom: 20px;
-      }
-
-      &--ios-video {
-        aspect-ratio: 539 / 673;
+        height: auto;
       }
 
       &--fred-p {
-        aspect-ratio: 539 / 958;
+        height: 100%;
+        max-width: fit-content;
       }
     }
   }
@@ -350,6 +295,12 @@ img {
     .p5Canvas {
       width: 100%;
       height: 100%;
+    }
+
+    .fifty-fifty--grid {
+      .project-video {
+        width: 100%;
+      }
     }
   }
 
@@ -372,28 +323,26 @@ img {
     }
 
     .gig {
-      img {
-        width: auto;
-        // max-width: 900px;
-        height: 90vh;
-        max-height: 90vh;
-        margin-bottom: 20px;
-      }
+      // img {
+      //   width: auto;
+      //   // max-width: 900px;
+      //   height: 90vh;
+      //   max-height: 90vh;
+      // }
 
       &__slick {
         width: 100%;
         // max-width: 50%;
         height: auto;
-        // margin-bottom: 20px;
       }
 
-      .fifty-fifty {
-        img {
-          width: 100%;
-          max-width: 90vh;
-          height: auto;
-        }
-      }
+      // .fifty-fifty {
+      //   img {
+      //     width: 100%;
+      //     max-width: 90vh;
+      //     height: auto;
+      //   }
+      // }
     }
   }
 
@@ -416,21 +365,21 @@ img {
       }
     }
 
-    .gig {
-      img {
-        width: auto;
-        height: 100%;
-        max-height: 90vh;
-      }
-    }
+    // .gig {
+    //   img {
+    //     width: auto;
+    //     height: 100%;
+    //     max-height: 90vh;
+    //   }
+    // }
 
-    .fifty-fifty {
-      img {
-        width: 100%;
-        height: auto;
-        max-height: 90vh;
-      }
-    }
+    // .fifty-fifty {
+    //   img {
+    //     width: 100%;
+    //     height: auto;
+    //     max-height: 90vh;
+    //   }
+    // }
   }
 
   // ————————————————————————————————————o————————————————————————————————————o Sound Noir -->
@@ -440,33 +389,27 @@ img {
       img {
         bottom: 86%;
       }
-    
     }
   }
 
   // ————————————————————————————————————o————————————————————————————————————o Stereoh -->
   // ———————————————————————————————————— Stereoh —>
   &--stereoh {
-    .gig {
-      img {
-        aspect-ratio: 1098 / 695;
-        width: auto;
-        max-width: 100%;
-        height: 100%;
-        max-height: 90vh;
-        margin-bottom: 50px;
-      }
-    }
+    // .gig {
+    //   img {
+    //     aspect-ratio: 1098 / 695;
+    //     width: auto;
+    //     max-width: 100%;
+    //     height: 100%;
+    //     max-height: 90vh;
+    //     margin-bottom: 50px;
+    //   }
+    // }
   }
 
   // ————————————————————————————————————o————————————————————————————————————o Whirligrid -->
   // ———————————————————————————————————— Whirligrid —>
   &--whirligrid {
-    // img {
-    //   width: 100%;
-    //   margin-bottom: 20px;
-    // }
-
     .fifty-fifty img {
       margin: 0;
     }
