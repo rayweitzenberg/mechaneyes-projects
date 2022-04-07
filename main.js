@@ -1,20 +1,46 @@
-// import { $ } from "./node_modules/jquery/dist/jquery.min.js";
-// import "./node_modules/slick-carousel/slick/slick.min";
-import $ from "jquery";
-import 'slick-carousel';
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
 import "./style.css";
 import "./styles/main.scss";
 
-// document.querySelector('#app').innerHTML = `
-//   <h1>Hello Vite!</h1>
-//   <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-// `
+// ————————————————————————————————————o————————————————————————————————————o Images+Video -->
+// ———————————————————————————————————— Img Sizing + Aspect Ratio —>
+// Programmatically setting widths + heights + aspect ratios of all
+// images on each individual page.
+const imagesLoad = () => {
+  var allImages = document.getElementsByTagName("img");
+  for (const img of allImages) {
+    img.width = img.naturalWidth;
+    img.height = img.naturalHeight;
+    img.style.aspectRatio = img.naturalWidth / img.naturalHeight;
+    img.parentElement.style.aspectRatio = img.naturalWidth / img.naturalHeight;
+    // console.log('aspect', img.style.aspectRatio)
+    // console.log("allImages", allImages);
+  }
+};
 
-// ————————————————————————————————————o————————————————————————————————————o Slick Projects -->
+// ———————————————————————————————————— Video Sizing + Aspect Ratio —>
+// had to delay calling videosLoad() until after 
+// all videos were retrieved. used async/await
+// 
+let allVideos
+const getVideos = () => {
+  allVideos = document.getElementsByTagName("video");
+  // console.log('allVideos', allVideos)
+  return allVideos
+}
+
+const videosLoad = async () => {
+  await getVideos()
+  for (const oneVid of allVideos) {
+    oneVid.width = oneVid.clientWidth;
+    oneVid.height = oneVid.clientHeight;
+    oneVid.style.aspectRatio = oneVid.clientWidth / oneVid.clientHeight;
+    oneVid.parentElement.style.aspectRatio =
+      oneVid.clientWidth / oneVid.clientHeight;
+    // console.log('aspect', video.style.aspectRatio)
+    console.log("oneVid", oneVid);
+  }
+};
+
 // ———————————————————————————————————— Slick Projects —>
 let slickSettings = {
   fade: true,
@@ -30,6 +56,8 @@ let slickSettings = {
 };
 
 $(function () {
+  imagesLoad()
+  videosLoad()
   $(".gig-slick").slick(slickSettings);
 });
 
