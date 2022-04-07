@@ -1,21 +1,21 @@
-// import $ from "jquery";
-// import 'slick-carousel';
-
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-
-// import 'https://code.jquery.com/jquery-3.6.0.slim.js'
-// import 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js'
-
 import "./style.css";
 import "./styles/main.scss";
 
-// document.querySelector('#app').innerHTML = `
-//   <h1>Hello Vite!</h1>
-//   <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-// `
+$(function() {
+  // ———————————————————————————————————— Img Sizing + Aspect Ratio —>
+  // Programmatically setting widths + heights + aspect ratios of all
+  // images on each individual page.
+  // TODO: Setup video the same way
+  var allImages = document.getElementsByTagName("img");
+  for (const img of allImages) {
+    img.width = img.naturalWidth
+    img.height = img.naturalHeight
+    img.style.aspectRatio = img.naturalWidth / img.naturalHeight
+    img.parentElement.style.aspectRatio = img.naturalWidth / img.naturalHeight
+    // console.log('aspect', img.style.aspectRatio)
+  }
+})
 
-// ————————————————————————————————————o————————————————————————————————————o Slick Projects -->
 // ———————————————————————————————————— Slick Projects —>
 let slickSettings = {
   fade: true,
