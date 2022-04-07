@@ -21,17 +21,10 @@ const imagesLoad = () => {
 // had to delay calling videosLoad() until after
 // all videos were retrieved. used async/await
 //
-let allVideos;
-const getVideos = () => {
-  allVideos = document.getElementsByTagName("video");
-  // console.log('allVideos', allVideos)
-  return allVideos;
-};
-
 let i = 0;
 const videosLoad = () => {
   // getVideos();
-  allVideos = document.getElementsByTagName("video");
+  const allVideos = document.getElementsByTagName("video");
   console.log('allVideos', allVideos)
   for (let oneVid of allVideos) {
     const videoLoop = () => {
@@ -46,7 +39,7 @@ const videosLoad = () => {
         if (i < allVideos) {
           videoLoop();
         }
-      }, 1000);
+      }, 100);
     };
     videoLoop()
   }
