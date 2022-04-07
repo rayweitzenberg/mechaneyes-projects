@@ -7,14 +7,17 @@ import "./styles/main.scss";
 // images on each individual page.
 const imagesLoad = () => {
   var allImages = document.getElementsByTagName("img");
-  for (const img of allImages) {
-    img.width = img.naturalWidth;
-    img.height = img.naturalHeight;
-    img.style.aspectRatio = img.naturalWidth / img.naturalHeight;
-    img.parentElement.style.aspectRatio = img.naturalWidth / img.naturalHeight;
-    // console.log('aspect', img.style.aspectRatio)
-    // console.log("allImages", allImages);
-  }
+  setTimeout(() => {
+    for (const img of allImages) {
+      img.width = img.naturalWidth;
+      img.height = img.naturalHeight;
+      img.style.aspectRatio = img.naturalWidth / img.naturalHeight;
+      img.parentElement.style.aspectRatio =
+        img.naturalWidth / img.naturalHeight;
+      // console.log('aspect', img.style.aspectRatio)
+      // console.log("allImages", allImages);
+    }
+  }, 100);
 };
 
 // ———————————————————————————————————— Video Sizing + Aspect Ratio —>
