@@ -43,7 +43,26 @@ const videosLoad = () => {
   }, 100);
 };
 
-// ———————————————————————————————————— Slick Projects —>
+const videoPlayPause = () => {
+  const vidsCollection = document.getElementsByClassName(
+    "project-video__video"
+  );
+  const vidBtnsCollection = document.getElementsByClassName(
+    "project-video__button"
+  );
+  for (let i = 0; i < vidsCollection.length; i++) {
+    vidsCollection[i].onclick = () => {
+      // vidsCollection.forEach(vid => vid.pause());
+      vidsCollection[i].paused
+        ? vidsCollection[i].play()
+        : vidsCollection[i].pause();
+      vidBtnsCollection[i].classList.toggle("project-video__button--hidden");
+    };
+  }
+};
+
+// ————————————————————————————————————o————————————————————————————————————o Slick -->
+// ———————————————————————————————————— Slick Settings for Projects —>
 let slickSettings = {
   fade: true,
   arrows: false,
@@ -57,26 +76,12 @@ let slickSettings = {
   pauseOnHover: false,
 };
 
-// ————————————————————————————————————o————————————————————————————————————o Video -->
-// ———————————————————————————————————— Video - Play/Pause + Button Toggle —>
+// ————————————————————————————————————o————————————————————————————————————o Init -->
+// ———————————————————————————————————— Run the Stuffs —>
 window.onload = (event) => {
   imagesLoad();
   videosLoad();
+  videoPlayPause();
 
   $(".gig-slick").slick(slickSettings);
-
-  const vidsCollection = document.getElementsByClassName(
-    "project-video__video"
-  );
-  const vidBtnsCollection = document.getElementsByClassName(
-    "project-video__button"
-  );
-  for (let i = 0; i < vidsCollection.length; i++) {
-    vidsCollection[i].onclick = () => {
-      vidsCollection[i].paused
-        ? vidsCollection[i].play()
-        : vidsCollection[i].pause();
-      vidBtnsCollection[i].classList.toggle("project-video__button--hidden");
-    };
-  }
 };
