@@ -2,6 +2,10 @@
 @use "fonts" as *;
 @import "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css";
 
+// *::-webkit-scrollbar-track {
+//   background: orange;
+// }
+
 html {
   font-size: 16px;
 }
@@ -28,7 +32,7 @@ img {
   width: 100%;
   max-width: fit-content;
   height: 100%;
-  max-height: 90vh;
+  max-height: 95vh;
   margin-bottom: 20px;
 
   img {
@@ -44,7 +48,7 @@ img {
   width: 50%;
   max-width: fit-content;
   height: 100%;
-  max-height: 90vh;
+  max-height: 95vh;
   margin-bottom: 20px;
 
   video {
@@ -263,20 +267,16 @@ img {
     }
 
     .project-video {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      max-width: none;
+      align-items: flex-start;
       
       &__video {
         width: 100%;
         height: auto;
       }
 
-      &--fred-p {
-        height: 100%;
-        max-width: fit-content;
+      &--fairfield {
+        width: auto;
+        max-width: none;
       }
     }
   }
