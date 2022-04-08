@@ -57,12 +57,14 @@ const videoPlayPause = () => {
   for (let i = 0; i < vidsCollection.length; i++) {
     vidsCollection[i].onclick = () => {
       if (vidsCollection[i].paused) {
-        vidsCollection.forEach((vid) => {
-          vid.pause();
-        });
-        vidBtnsCollection.forEach((btn) => {
-          btn.classList.remove("project-video__button--hidden");
-        });
+        if (vidsCollection.length < 1) {
+          vidsCollection.forEach((vid) => {
+            vid.pause();
+          });
+          vidBtnsCollection.forEach((btn) => {
+            btn.classList.remove("project-video__button--hidden");
+          });
+        }
         vidsCollection[i].play();
         vidBtnsCollection[i].classList.add("project-video__button--hidden");
       } else {
