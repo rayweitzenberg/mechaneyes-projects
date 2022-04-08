@@ -43,6 +43,9 @@ const videosLoad = () => {
   }, 100);
 };
 
+// ———————————————————————————————————— Play or Pause Videos —>
+// also ... add/remove play buttons
+//
 const videoPlayPause = () => {
   const vidsCollection = document.getElementsByClassName(
     "project-video__video"
@@ -50,13 +53,27 @@ const videoPlayPause = () => {
   const vidBtnsCollection = document.getElementsByClassName(
     "project-video__button"
   );
+
   for (let i = 0; i < vidsCollection.length; i++) {
     vidsCollection[i].onclick = () => {
-      // vidsCollection.forEach(vid => vid.pause());
-      vidsCollection[i].paused
-        ? vidsCollection[i].play()
-        : vidsCollection[i].pause();
-      vidBtnsCollection[i].classList.toggle("project-video__button--hidden");
+      if (vidsCollection[i].paused) {
+        vidsCollection.forEach((vid) => {
+          vid.pause();
+        });
+        vidBtnsCollection.forEach((btn) => {
+          btn.classList.remove("project-video__button--hidden");
+        });
+        vidsCollection[i].play();
+        vidBtnsCollection[i].classList.add("project-video__button--hidden");
+      } else {
+        vidsCollection[i].pause();
+        vidBtnsCollection[i].classList.remove("project-video__button--hidden");
+      }
+
+      if (vidsCollection[i].playing) {
+        vidsCollection[i].pause();
+        vidBtnsCollection[i].classList.remove("project-video__button--hidden");
+      }
     };
   }
 };
