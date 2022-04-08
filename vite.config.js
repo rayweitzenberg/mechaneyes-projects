@@ -19,6 +19,7 @@ module.exports = defineConfig({
         whirligrid: resolve(__dirname, "projects/whirligrid/index.html"),
       },
     },
+    chunkSizeWarningLimit: 1000,
   },
   css: {
     postcss: {
