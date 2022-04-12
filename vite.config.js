@@ -14,6 +14,7 @@ module.exports = defineConfig({
         monolyth: resolve(__dirname, "projects/monolyth/index.html"),
         munari: resolve(__dirname, "projects/munari/index.html"),
         objects: resolve(__dirname, "projects/objects/index.html"),
+        soido: resolve(__dirname, "projects/soido/index.html"),
         soundnoir: resolve(__dirname, "projects/soundnoir/index.html"),
         stereoh: resolve(__dirname, "projects/stereoh/index.html"),
         whirligrid: resolve(__dirname, "projects/whirligrid/index.html"),
