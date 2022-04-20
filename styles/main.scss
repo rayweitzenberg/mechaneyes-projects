@@ -330,10 +330,14 @@ img {
       //   max-height: 90vh;
       // }
 
-      &__slick {
+      &-slick {
         width: 100%;
         // max-width: 50%;
         height: auto;
+
+        .project-img {
+          margin-bottom: 0;
+        }
       }
 
       // .fifty-fifty {
