@@ -40,6 +40,7 @@ img {
 
 .project-img {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -53,10 +54,20 @@ img {
     width: 100%;
     height: auto;
   }
+
+  p {
+    align-self: flex-start;
+  }
+
+  img + p {
+    width: 100%;
+    margin-top: 10px;
+  }
 }
 
 .project-video {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 50%;
@@ -67,6 +78,11 @@ img {
 
   video {
     width: 100%;
+
+    & + p {
+      width: 100%;
+      margin-top: 10px;
+    }
   }
 }
 
@@ -83,6 +99,7 @@ img {
 
   .project-img {
     width: 50%;
+    width: calc(50% - 10px);
   }
 
   &--flex {
@@ -120,6 +137,11 @@ img {
 
   p {
     width: 70%;
+    line-height: 1.5;
+
+    @include bp(lg) {
+      width: 50%;
+    }
   }
 
   .hero {
@@ -181,11 +203,23 @@ img {
   }
 
   .gig {
-    margin-bottom: 50px;
+    margin-bottom: 70px;
     padding: 0 20px;
 
     h2 {
       margin-bottom: 20px;
+    }
+
+    .caption {
+      margin-bottom: 20px;
+
+      h2 {
+        margin: 0;
+      }
+
+      p {
+        margin: 5px 0 10px;
+      }
     }
   }
 
@@ -282,7 +316,7 @@ img {
 
     .project-video {
       align-items: flex-start;
-      
+
       &__video {
         width: 100%;
         height: auto;
@@ -326,23 +360,25 @@ img {
     }
 
     .hero {
+      img {
+        bottom: -7%;
+      }
+
       &__gradient {
         background: linear-gradient(
           0deg,
           rgba(0, 0, 0, 0.6) 0%,
-          rgba(0, 0, 0, 0.5) 30%,
+          rgba(0, 0, 0, 0.5) 10%,
           rgba(0, 0, 0, 0) 100%
         );
       }
     }
 
     .gig {
-      // img {
-      //   width: auto;
-      //   // max-width: 900px;
-      //   height: 90vh;
-      //   max-height: 90vh;
-      // }
+      .project-img {
+        display: block;
+        margin-bottom: 20px;
+      }
 
       &-slick {
         width: 100%;
