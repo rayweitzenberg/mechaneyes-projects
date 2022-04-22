@@ -76,6 +76,12 @@ img {
   max-height: 95vh;
   margin-bottom: 20px;
 
+  @include bp(mob) {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
   video {
     width: 100%;
 
@@ -105,6 +111,25 @@ img {
   &--flex {
     display: flex;
     gap: 20px;
+
+    @include bp(mob) {
+      flex-direction: column;
+      margin-bottom: 20px;
+
+      .project-img {
+        justify-content: flex-start;
+        width: 100%;
+        max-width: none;
+        margin-bottom: 10px;
+
+        &:last-child {
+        }
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 
   &--grid {
@@ -112,8 +137,16 @@ img {
     grid-template-columns: calc(50% - 10px) calc(50% - 10px);
     gap: 20px;
 
+    @include bp(mob) {
+      grid-template-columns: 100%;
+    }
+
     .project-img {
       width: 100%;
+
+      @include bp(mob) {
+        margin: 0;
+      }
     }
   }
 }
@@ -139,6 +172,10 @@ img {
     width: 70%;
     line-height: 1.5;
 
+    @include bp(mob) {
+      width: 100%;
+    }
+
     @include bp(lg) {
       width: 50%;
     }
@@ -149,16 +186,31 @@ img {
     overflow: hidden;
     aspect-ratio: 16 / 5 !important;
     width: 100%;
+    margin-bottom: 50px;
+
+    @include bp(mob) {
+      aspect-ratio: 16 / 9 !important;
+      margin-bottom: 20px;
+
+      h1 + video {
+        object-fit: cover;
+        object-position: center;
+        // width: auto;
+        height: 100%;
+      }
+    }
 
     @include bp(lg) {
       aspect-ratio: 16 / 4 !important;
     }
 
-    margin-bottom: 50px;
-
     .aspect {
       @include aspect-ratio(16, 5);
       overflow: hidden;
+
+      @include bp(mob) {
+        height: 100%;
+      }
 
       @include bp(lg) {
         @include aspect-ratio(16, 4);
@@ -206,8 +258,16 @@ img {
     margin-bottom: 70px;
     padding: 0 20px;
 
+    @include bp(mob) {
+      margin-bottom: 0px;
+    }
+
     h2 {
       margin-bottom: 20px;
+
+      @include bp(mob) {
+        margin: 15px 0;
+      }
     }
 
     .caption {
@@ -242,23 +302,36 @@ img {
   // ———————————————————————————————————— Better Breaks —>
   &--better-breaks {
     .hero {
-      // h1 {
-      //   color: white;
-      // }
-
       video {
         position: absolute;
         top: -4vw;
         left: 0;
+
+        @include bp(mob) {
+          position: static;
+          top: 0;
+          width: auto;
+          height: 100%;
+        }
       }
     }
 
     h2 {
       margin-bottom: 0;
+
+      @include bp(mob) {
+        display: none;
+      }
     }
 
     p {
       margin-top: 10px;
+    }
+
+    .project-video {
+      + div {
+        display: none;
+      }
     }
   }
 
@@ -268,6 +341,10 @@ img {
     .hero {
       img {
         bottom: 107%;
+
+        @include bp(mob) {
+          bottom: 20%;
+        }
 
         @include bp(lg) {
           bottom: 147%;
@@ -279,6 +356,14 @@ img {
   // ————————————————————————————————————o————————————————————————————————————o Gossamer -->
   // ———————————————————————————————————— Gossamer —>
   &--gossamer {
+    .hero {
+      @include bp(mob) {
+        img {
+          bottom: 0;
+        }
+      }
+    }
+
     .hero__gradient {
       position: absolute;
       top: 0;
@@ -305,6 +390,11 @@ img {
         top: -68%;
         top: -20vw;
         left: 0;
+
+        @include bp(mob) {
+          position: static;
+          top: 0;
+        }
       }
 
       @include bp(lg) {
@@ -325,6 +415,10 @@ img {
       &--fairfield {
         width: auto;
         max-width: none;
+
+        @include bp(mob) {
+          margin-bottom: 20px;
+        }
       }
     }
   }
@@ -338,6 +432,11 @@ img {
     #hero--bloom {
       width: 100vw;
       height: 100%;
+
+      @include bp(mob) {
+        width: 100%;
+        height: 100%;
+      }
     }
 
     .p5Canvas {
@@ -378,6 +477,10 @@ img {
       .project-img {
         display: block;
         margin-bottom: 20px;
+
+        @include bp(mob) {
+          margin: 0;
+        }
       }
 
       &-slick {
@@ -407,6 +510,11 @@ img {
       img {
         bottom: 71%;
         width: 105%;
+
+        @include bp(mob) {
+          bottom: 0;
+          height: 100%;
+        }
       }
 
       &__gradient {
@@ -418,22 +526,6 @@ img {
         );
       }
     }
-
-    // .gig {
-    //   img {
-    //     width: auto;
-    //     height: 100%;
-    //     max-height: 90vh;
-    //   }
-    // }
-
-    // .fifty-fifty {
-    //   img {
-    //     width: 100%;
-    //     height: auto;
-    //     max-height: 90vh;
-    //   }
-    // }
   }
 
   // ————————————————————————————————————o————————————————————————————————————o So I Do -->
@@ -443,6 +535,13 @@ img {
       img {
         bottom: 0;
       }
+
+      @include bp(mob) {
+        img {
+          width: auto;
+          height: 100%;
+        }
+      }
     }
 
     .fifty-fifty--flex {
@@ -451,6 +550,10 @@ img {
 
     .project-img {
       margin-bottom: 40px;
+
+      @include bp(mob) {
+        margin: 0;
+      }
     }
   }
 
@@ -460,6 +563,15 @@ img {
     .hero {
       img {
         bottom: 86%;
+      }
+
+      @include bp(mob) {
+        img {
+          object-fit: cover;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+        }
       }
     }
 
@@ -488,6 +600,23 @@ img {
   // ————————————————————————————————————o————————————————————————————————————o Whirligrid -->
   // ———————————————————————————————————— Whirligrid —>
   &--whirligrid {
+    .hero {
+      @include bp(mob) {
+        img {
+          object-fit: cover;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    @include bp(mob) {
+      .caption + .project-img {
+        margin-bottom: 30px;
+      }
+    }
+
     .fifty-fifty img {
       margin: 0;
     }
