@@ -30,6 +30,7 @@ const imagesLoad = () => {
 //
 const videosLoad = () => {
   const allVideos = document.getElementsByTagName("video");
+
   setTimeout(() => {
     for (let oneVid of allVideos) {
       oneVid.width = oneVid.videoWidth;
@@ -57,14 +58,13 @@ const videoPlayPause = () => {
   for (let i = 0; i < vidsCollection.length; i++) {
     vidsCollection[i].onclick = () => {
       if (vidsCollection[i].paused) {
-        if (vidsCollection.length < 1) {
-          vidsCollection.forEach((vid) => {
-            vid.pause();
-          });
-          vidBtnsCollection.forEach((btn) => {
-            btn.classList.remove("project-video__button--hidden");
-          });
-        }
+        vidsCollection.forEach((vid) => {
+          vid.pause();
+        });
+        vidBtnsCollection.forEach((btn) => {
+          btn.classList.remove("project-video__button--hidden");
+        });
+        vidsCollection[i].volume = 0.3;
         vidsCollection[i].play();
         vidBtnsCollection[i].classList.add("project-video__button--hidden");
       } else {

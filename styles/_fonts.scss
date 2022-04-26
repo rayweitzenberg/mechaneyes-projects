@@ -28,6 +28,12 @@
     font-style: italic;
 }
 
+@mixin cholla-wide() {
+  font-family: cholla-wide, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 // Cholla Wide Bold
 @mixin cholla-wide-bold() {
     font-family: cholla-wide, sans-serif;
@@ -42,6 +48,11 @@ h1 {
 
 h2 {
   @include cholla-unicase;
+  font-size: 2.4rem;
+}
+
+h3 {
+  @include cholla-wide;
   font-size: 2.4rem;
 }
 
